@@ -9,13 +9,55 @@
     body
     {
       background: #FFFFFF;
-      width: 99%;
+      width: 97%;
       height: 100%;
       margin: auto;
       overflow-x: hidden;
     }
     h1{
       text-align: center;
+    }
+    #footer
+    {
+      text-align: center;
+      padding: 1.5rem auto;
+      color: #00F;
+      font-size: 1.5rem;
+    }
+    #fileUpload
+    {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
+      border: 1px solid #2590EB;
+      border-radius: 10px;
+    }
+    #fileUpload-id, #fileListing-id
+    {
+      width: 30%;
+      padding-left: 20px;
+      font-family: monospace;
+      color: #2590EB;
+      text-transform: lowercase;
+    }
+    #fileUpload-content, #fileListing-content
+    {
+      width: 70%;
+      background-color: #2590EB;
+      border-radius: 0 10px 10px 0;
+    }
+    #fileListing
+    {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      justify-content: space-around;
+      margin-top: 2rem;
+      border: 1px solid #2590EB;
+      border-radius: 10px;
     }
     .list
     {
@@ -38,10 +80,10 @@
       margin: 5px;
       padding: 2px;
       overflow-x: auto;
-      border: 1px solid orange;
+      border: 1px solid #2590EB;
       border-radius: 5px;
       background: #FFFFFF;
-      color: brown;
+      color: #2590EB;
     }
     .small
     {
@@ -63,12 +105,97 @@
       border: 1px solid red;
       text-align: center;
       color: red;
+      background-color: white;
     }
     .btn:hover
     {
       color: white;
       background-color: red;
     }
+    .btn-file-submit, .btn-list-files
+    {
+      width: auto;
+      padding: 3px;
+      border: 1px solid blue;
+      font-size: 1.5rem;
+      font-family: monospace;
+      color: blue;
+      background-color: white;
+    }
+    .btn-file-submit:hover, .btn-list-files:hover
+    {
+      color: white;
+      background-color: blue;
+    }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px yellow;
+      border-radius: 2px;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background-color: #2299FF;
+      border-radius: 2px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: brown;
+    }
+    .wrapper
+    {
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .wrapper .file-upload
+    {
+      height:200px;
+      width:200px;
+      border-radius: 100px;
+      position:relative;
+
+      display:flex;
+      justify-content:center;
+      align-items: center;
+
+      border:4px solid #FFFFFF;
+      overflow:hidden;
+      background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+      background-size: 100% 200%;
+      transition: all 1s;
+      color: #FFFFFF;
+      font-size:100px;
+
+    }
+    .wrapper input[type='file']
+    {
+      height:200px;
+      width:200px;
+      position:absolute;
+      top:0;
+      left:0;
+      opacity:0;
+      cursor:pointer;
+    }
+    .wrapper .file-upload:hover
+    {
+      background-position: 0 -100%;
+      color:#2590EB;
+    }
+    .myIcons
+    {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+
+    {{fontawesome-css}}
   </style>
   <title>Document</title>
 </head>

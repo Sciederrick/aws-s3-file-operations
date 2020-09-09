@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars')
 const fileUpload = require('express-fileupload')
 const fileOp = require('./modules/fileOperations.js')
 
+require(__dirname+'/../public/js/helpers.js')
+
 const app = express()
 
 app.engine('hbs', exphbs({
