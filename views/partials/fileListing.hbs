@@ -1,0 +1,24 @@
+<div>
+  <form action="/api/list" method="GET">
+    <h2>File Listing</h2>
+    <input type="submit" value="list files">
+  </form>
+  {{#if listExists}}
+  <div class="list">
+    {{#each bucketObjects}}
+    <div class="list-item">
+      <div>{{this.Key}}</div>
+      <div class="small">{{this.LastModified}}</div>
+      <div class="small">{{this.Size}}</div>
+      <div class="label">{{this.StorageClass}}</div>
+      <div class="">
+        <form action="/api/delete" method="POST">
+           <input type="hidden" id="{{this.Key}}" name="fileName"  value="{{this.Key}}">
+          <input type="submit" value="delete" class="btn">
+        </form>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

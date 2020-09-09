@@ -1,0 +1,10 @@
+body
+{
+  background: aqua;
+}
+li
+{
+  width: 300px;
+  margin: 4px;
+  list-style: none;
+}
