@@ -51,6 +51,14 @@ app.post("/api/delete", (req, res)=>{
   })()
 })
 
+app.post("/api/download", (req, res)=>{
+  (async ()=>{
+    const fileName = req.body.fileName
+    let response = await fileOp.downloadFile(fileName)
+    res.render('main', {statusExists: true, status: response})
+  })()
+})
+
 app.listen(process.env.PORT, () => {
   console.log(`listening on port ${process.env.PORT}`)
 })

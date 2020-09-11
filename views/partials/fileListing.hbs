@@ -10,7 +10,7 @@
     <div class="list">
       {{#each bucketObjects}}
       <div class="list-item">
-        <div>{{this.Key}}</div>
+        <div class="file">{{this.Key}}</div>
         <div class="small">{{this.LastModified}}</div>
         <div class="small">{{this.Size}}</div>
         <div class="label">{{this.StorageClass}}</div>
@@ -18,6 +18,12 @@
           <form action="/api/delete" method="POST">
             <input type="hidden" id="{{this.Key}}" name="fileName"  value="{{this.Key}}">
             <input type="submit" value="delete" class="btn">
+          </form>
+        </div>
+        <div class="">
+          <form action="/api/download" method="POST">
+            <input type="hidden" id="{{this.Key}}" name="fileName"  value="{{this.Key}}">
+            <input type="submit" value="download" class="btn btn-file-download">
           </form>
         </div>
       </div>

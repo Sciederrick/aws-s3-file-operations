@@ -51,10 +51,23 @@ const deleteFile = async (fileName) => {
   }
   //Deleting a file
   let result = await s3.deleteObject(params).promise()
-  
+
   return `file deleted Successfuly`
+}
+
+const downloadFile = async (fileName) => {
+  const params = {
+    Bucket: BUCKET_NAME,
+    Key: fileName
+  }
+  //Download a file
+  let result = await s3.getObject(params).promise()
+
+  console.log(result)
+  return result
 }
 
 module.exports.uploadFile = uploadFile
 module.exports.listFiles =  listFiles
 module.exports.deleteFile = deleteFile
+module.exports.downloadFile = downloadFile
